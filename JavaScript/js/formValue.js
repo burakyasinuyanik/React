@@ -1,8 +1,8 @@
-const registerFormElement = document.querySelector('#registerForm');
+const registerFormElement = document.querySelector('#registerForm')
 
 registerFormElement.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(event);
+  console.log(event)
 
   // const firstName = document.querySelector("input[name=firstName]")
   // console.log(firstName.value)
@@ -13,25 +13,25 @@ registerFormElement.addEventListener("submit", (event) => {
   // })
 
   // console.log( Array.from(event.target.elements) )
-  const formValues = {};
+  const formValues = {}
   Array.from(event.target.elements).forEach(item => {
     if (item.tagName === "INPUT") {
-      // console.log(item.type);
-      // console.log(item.tagName);
-      // console.log(item.name);
-      // console.log(item.value);
+      // console.log(item.type)
+      // console.log(item.tagName)
+      // console.log(item.name)
+      // console.log(item.value)
       if (
         item.type === "text" || 
         item.type === "email" || 
         item.type === "password"
       ) {
-        formValues[item.name] = item.value;
+        formValues[item.name] = item.value
       }
       if (item.type === "checkbox") {
-        formValues[item.name] = item.checked;
+        formValues[item.name] = item.checked
       }
     }
   })
-  console.table(formValues);
-  registerFormElement.reset();
+  console.table(formValues)
+  registerFormElement.reset()
 })
