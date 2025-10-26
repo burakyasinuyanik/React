@@ -53,7 +53,12 @@ function App(){
     {IMAGES.map((item,key)=><li key={key}><ImgThumbnail imgSrc={item} key={key} imgAlt=""/></li>)}
     {USERS.map((item,key)=><li key={key}>{item}</li>)}
     <hr/>
-    {IMAGES.map((item,key)=><Card key={key} title={"Merhabav2"} imgSrc={item}  />)}
+    {/* {IMAGES.map((item,key)=><Card key={key} title={"Merhabav2"} imgSrc={item}  />)} */}
+    <Card imgSrc={"https://picsum.photos/id/237/600/240"} imgAlt={"pictureVs"} dataId={22}>
+      <p>Lorem, ipsum dolor.</p>
+      <p>Suscipit, omnis quod?</p>
+      <p>Eaque, voluptas est!</p>
+    </Card>
   </React.Fragment>
 }
 

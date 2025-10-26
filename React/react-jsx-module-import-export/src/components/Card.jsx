@@ -1,6 +1,6 @@
 import ImgThumbnail from "./ImgThumbnail"
 
-export default function Card({title,imgSrc,imgAlt}){
+export default function Card({title, imgSrc, imgAlt, children, ...rest}){
   const cardStyle={
     padding:"10px",
     border:"1px solid #bdc3c7",
@@ -13,9 +13,8 @@ export default function Card({title,imgSrc,imgAlt}){
     <div style={cardStyle}>
       <ImgThumbnail imgSrc={imgSrc} imgAlt={imgAlt}/>
       <h2>{title}</h2>
-      <p>Lorem, ipsum dolor.</p>
-      <p>Incidunt, id neque.</p>
-      <p>Facere, consequuntur harum?</p>
+      {children}
+      {rest.dataId}
     </div>
   )
 }
