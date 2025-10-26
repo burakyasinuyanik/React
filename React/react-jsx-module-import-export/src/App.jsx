@@ -5,6 +5,7 @@ import { Items, UserList,SingleUser } from "./components/UserList";
 import Button from "./components/Button";
 import ImgThumbnail from "./components/ImgThumbnail";
 import {IMAGES,USERS} from "./data"
+import Card from "./components/Card";
 // return ederken html elementi ve sadece parent elementi gönderebilirsin.fragment yapısı ile birden fazla gönderebilirsin <></>
 //süslü parantez ile javascript yapısını çalıştırabilirsin
 //bir etiket mutlaka sonlanmalıdır.
@@ -51,6 +52,8 @@ function App(){
     <hr/>
     {IMAGES.map((item,key)=><li key={key}><ImgThumbnail imgSrc={item} key={key} imgAlt=""/></li>)}
     {USERS.map((item,key)=><li key={key}>{item}</li>)}
+    <hr/>
+    {IMAGES.map((item,key)=><Card key={key} title={"Merhabav2"} imgSrc={item}  />)}
   </React.Fragment>
 }
 
