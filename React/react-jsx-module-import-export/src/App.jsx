@@ -11,6 +11,13 @@ function App(){
   const userName="burak";
   const users=["ahmet","mehmet"];
   const mapperUsers=users.map((item,key)=><li key={key}>{item}</li>)
+  const products = [
+    {id: 1,name: "MacBook Pro 14", inStock: false},
+    {id: 2,name: "MacBook Pro 13", inStock: true},
+    {id: 3,name: "iPad", inStock: false},
+    {id: 4,name: "Lenovo 14", inStock: true},
+    {id: 5,name: "Dell XPS", inStock: true},
+  ]
   return <React.Fragment>
   <h1 className="bg-red">Merhaba {userName}</h1>
   <h2>react</h2>
@@ -22,5 +29,13 @@ function App(){
   <ul style={{backgroundColor:"yellow"}}>
     {users.map((item,key)=><li key={key}>{item}-</li>)}
   </ul>
+  <ul>
+      {products
+        .filter(item => item.inStock)
+        .map(item => 
+          <li key={item.id}>{item.name.toUpperCase()}</li>
+        )
+      }
+    </ul>
   </React.Fragment>
 }
