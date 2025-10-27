@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+ const pictureIds=[200,201,202,203,204]
+ const [imageId,setImageId]=useState(pictureIds[0]);
 
+  const getLoremPicsumImg=(id,width=800,height=450)=>`https://picsum.photos/id/${id}/${width}/${height}`
+
+  function handleClick(id){
+    setImageId(id)
+    console.log(id)
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="container">
+      <hgroup>
+      <h2>Mini Görsel Uygulaması v1</h2>  
+      <h3>Görseller:</h3>    
+      </hgroup>
+      <img src={getLoremPicsumImg(imageId)} alt="" style={{width:"100%"}}/>
+      <div className="grid">
+        {
+          pictureIds.map((item,key)=><div key={key}><img
+           key={key} 
+           src={getLoremPicsumImg((item),100,100)}
+           onClick={()=>handleClick(item)}
+           /></div>)
+        }
+        
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 
