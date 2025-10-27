@@ -4,8 +4,9 @@ export default App
 import { Items, UserList,SingleUser } from "./components/UserList";
 import Button from "./components/Button";
 import ImgThumbnail from "./components/ImgThumbnail";
-import {IMAGES,USERS} from "./data"
+import {IMAGES,INFO,USERS} from "./data"
 import Card from "./components/Card";
+import ConditionalRenderedUserList from "./components/ConditionalRenderedUserList";
 // return ederken html elementi ve sadece parent elementi gönderebilirsin.fragment yapısı ile birden fazla gönderebilirsin <></>
 //süslü parantez ile javascript yapısını çalıştırabilirsin
 //bir etiket mutlaka sonlanmalıdır.
@@ -59,6 +60,9 @@ function App(){
       <p>Suscipit, omnis quod?</p>
       <p>Eaque, voluptas est!</p>
     </Card>
+    <ConditionalRenderedUserList isActive={false} />
+    <hr/>
+      {INFO.products?.map((item,key)=><li key={key}>{products}</li>)}
   </React.Fragment>
 }
 

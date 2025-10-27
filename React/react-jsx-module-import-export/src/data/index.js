@@ -1,3 +1,4 @@
 import IMAGES from "./image";
 import USERS from "./users";
-export {IMAGES,USERS}
+import  INFO  from "./info";
+export {IMAGES,USERS, INFO}
