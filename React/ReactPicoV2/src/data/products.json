@@ -1,0 +1,37 @@
+{
+  "data":[
+ {  "id":1,
+    "name":"Urun 1",
+    "imgName":"https://picsum.photos/id/237/600/450",
+    "thumbNail":"ttps://picsum.photos/id/237/600/450",
+    "isAvailable":true,
+    "isActive":true
+  }, {  
+    "id":2,
+    "name":"Urun 2",
+    "imgName":"https://picsum.photos/id/237/600/450",
+    "thumbNail":"ttps://picsum.photos/id/237/600/450",
+    "isAvailable":true,
+    "isActive":true
+  }, {  
+    "id":3,
+    "name":"Urun 3",
+    "imgName":"https://picsum.photos/id/237/600/450",
+    "thumbNail":"ttps://picsum.photos/id/237/600/450",
+    "isAvailable":true,
+    "isActive":true
+  }, {  "id":4,
+    "name":"Urun 4",
+    "imgName":"https://picsum.photos/id/237/600/450",
+    "thumbNail":"ttps://picsum.photos/id/237/600/450",
+    "isAvailable":true,
+    "isActive":true
+  }, {  "id":5,
+    "name":"Urun 5",
+    "imgName":"https://picsum.photos/id/237/600/450",
+    "thumbNail":"ttps://picsum.photos/id/237/600/450",
+    "isAvailable":true,
+    "isActive":true
+  }  
+ ]
+}
