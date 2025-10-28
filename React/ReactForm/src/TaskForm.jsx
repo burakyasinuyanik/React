@@ -1,13 +1,24 @@
-import {  useState } from "react"
+import {  useEffect, useState } from "react"
 import TaskList from "./TaskList"
 import {v4 as uuidv4} from "uuid"
 export default function TaskForm(){
   const emtyForm={
     task:"",
-    priority:false
+    priority:false,
+    isDone:false
   }
   const [formData,setFormData]=useState(emtyForm)
   const [tasks,setTasks]=useState([])
+  const [taskChangeCount,setTaskChangeCount]=useState(0)
+  useEffect(()=>{
+    const localStrogeTasks=JSON.parse(localStorage.getItem("tasks"))
+    setTasks(localStrogeTasks??[])
+  },[])
+  useEffect(()=>{
+    if(taskChangeCount>0){
+      localStorage.setItem("tasks",JSON.stringify(tasks))
+    }
+  },[taskChangeCount])
   function handleInputChange(event){
     setFormData(prev=>{
       return {
@@ -16,22 +27,32 @@ export default function TaskForm(){
       }
     })
   }
+  function finishTask(id){
+    const taskIndex=tasks.findIndex(item=>item.id==id)
+    const task =tasks[taskIndex];
+    task.isDone=!task.isDone
+    const newTasks=tasks.slice()
+    newTasks[taskIndex]=task
+    setTaskChangeCount(prev=>prev+1)
+  }
   function removeTask(id){
-    console.log(id)
+    
     setTasks(prev=>prev.filter(item=>item.id!==id))
+    setTaskChangeCount(prev=>prev+1)
 
   }
   function editTask(id){
     const task=tasks.find(item=>item.id==id)
       
       setFormData({...task,isEdited:true})
-      console.log(formData)
+      setTaskChangeCount(prev=>prev+1)
+
   }
   function handleFormSubmit(event){
     event.preventDefault()
     if(formData.isEdited){
       const taskIndex=tasks.findIndex(item=>item.id==formData.id)
-      console.log(taskIndex)
+      
       const newTasks=tasks.slice()
       newTasks[taskIndex]={...formData}
        setFormData(emtyForm)
@@ -45,11 +66,12 @@ export default function TaskForm(){
       event.target.reset()
       
     }
+    setTaskChangeCount(prev=>prev+1)
 
      }
   return(
     <>
-        <TaskList tasks={tasks} removeTask={removeTask} editTask={editTask}/>
+        <TaskList finishTask={finishTask} tasks={tasks} removeTask={removeTask} editTask={editTask}/>
             <form onSubmit={handleFormSubmit}>
           <div className="row mb-3">
             <label htmlFor="Task" className="col-sm-2 col-form-label">Task</label>
