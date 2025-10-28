@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import NavBar from './components/Navbar'
+import SiteRouters from './SiteRouters'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,8 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-            <h1>App</h1>
+            <SiteRouters/>
+              
           </div>
         </div>
       </div>

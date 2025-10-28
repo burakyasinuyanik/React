@@ -1,6 +1,6 @@
+import { NavLink } from "react-router-dom"
+
 export default function NavBar(){
-
-
 
   return(
     <>
@@ -13,16 +13,16 @@ export default function NavBar(){
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+              <NavLink className="nav-link" aria-current="page" to="/">Ana Sayfa</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Ürünler</a>
+              <NavLink className="nav-link" to="/urunler">Ürünler</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Hakkımızda</a>
+              <NavLink className="nav-link" to="/about">Hakkımızda</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" >İletişim</a>
+              <NavLink className="nav-link" to="/contact" >İletişim</NavLink>
             </li>
           </ul>
         </div>
