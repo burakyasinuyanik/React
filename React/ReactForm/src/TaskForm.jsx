@@ -23,12 +23,22 @@ export default function TaskForm(){
   }
   function editTask(id){
     const task=tasks.find(item=>item.id==id)
-      console.log(task.priority)
-      setFormData(task)
+      
+      setFormData({...task,isEdited:true})
+      console.log(formData)
   }
   function handleFormSubmit(event){
     event.preventDefault()
-    if(formData.task.length>3){
+    if(formData.isEdited){
+      const taskIndex=tasks.findIndex(item=>item.id==formData.id)
+      console.log(taskIndex)
+      const newTasks=tasks.slice()
+      newTasks[taskIndex]={...formData}
+       setFormData(emtyForm)
+       setTasks(newTasks)
+      event.target.reset()
+    }
+   else if(formData.task.length>3){
       formData.id=uuidv4()
       setTasks(prev=>[formData,...prev])
       setFormData(emtyForm)
