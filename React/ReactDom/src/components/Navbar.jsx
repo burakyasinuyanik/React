@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export default function NavBar(){
 
@@ -6,7 +6,7 @@ export default function NavBar(){
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
       <div className="container">
-        <a className="navbar-brand" href="#">B-Store</a>
+        <Link className="navbar-brand" to="/">B-Store</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +16,7 @@ export default function NavBar(){
               <NavLink className="nav-link" aria-current="page" to="/">Ana Sayfa</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/urunler">Ürünler</NavLink>
+              <NavLink className="nav-link" to="/products">Ürünler</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">Hakkımızda</NavLink>
