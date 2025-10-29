@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ProductCard({item}){
+export default function ProductCard({item,user}){
 
   return(
     <>
@@ -13,7 +13,11 @@ export default function ProductCard({item}){
           <h5 className="card-title">{item.title}</h5>
           <p className="card-text">{item.description.substring(0,20)}...</p>
           <p className="card-text">{item.price}</p>
+          {
+             user &&
           <a href="#" className="btn btn-primary">Fav</a>
+          
+          }
         </div>
       </div>
     </div>

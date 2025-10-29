@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-export default function Product(){
+export default function Product({user}){
 
   const {productId}=useParams()
 
@@ -25,7 +25,7 @@ export default function Product(){
           <h5 className="card-title">{product.title}</h5>
           <p className="card-text">{product.description}...</p>
           <p className="card-text">{product.price}</p>
-          <a href="#" className="btn btn-primary">Fav</a>
+          {user&&<a href="#" className="btn btn-primary">Fav</a>}
         </div>
       </div>
     </div>

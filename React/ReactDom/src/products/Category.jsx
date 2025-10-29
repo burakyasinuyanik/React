@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ProductCard from "./ProductCard"
 
-export default function Category(){
+export default function Category(user){
   const {categoryName}=useParams()
   const [categoryProduct,setCategoryProducts]=useState([])
 
@@ -17,7 +17,7 @@ export default function Category(){
     <>
     <h6>Karegori:{categoryName.toUpperCase()}</h6>
     <div className="row row-cols-sm-3 row-cols-md-4">
-      {categoryProduct.map(item=><ProductCard key={item.id} item={item}/>)}
+      {categoryProduct.map(item=><ProductCard user={user} key={item.id} item={item}/>)}
       </div>
     </>
   )
