@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 export default function Navbar(){
 
   return(
@@ -10,13 +11,13 @@ export default function Navbar(){
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <NavLink className="nav-link"  to="/">Ana Sayfa</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <NavLink className="nav-link" to="/hakkimizda">About</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <NavLink className="nav-link" to="/iletisim">Contact</NavLink>
             </li>
           </ul>
         </div>
