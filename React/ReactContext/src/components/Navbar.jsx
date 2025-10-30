@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import ThemeIcon from "./ThemeIcon"
 export default function Navbar(){
 
   return(
@@ -9,7 +10,7 @@ export default function Navbar(){
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink className="nav-link"  to="/">Ana Sayfa</NavLink>
             </li>
@@ -18,6 +19,9 @@ export default function Navbar(){
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/iletisim">Contact</NavLink>
+            </li>
+            <li className="nav-item">
+              <ThemeIcon/>
             </li>
           </ul>
         </div>
