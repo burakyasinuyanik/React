@@ -1,5 +1,8 @@
-export default function Footer(){
+import { useContext } from "react"
+import { ThemeContext } from "../context/ThemeContext"
 
+export default function Footer(){
+  const{themeName}=useContext(ThemeContext)
   return(
     <div className="container">
       <footer className="py-5">
@@ -71,6 +74,7 @@ export default function Footer(){
 
         <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
           <p>© 2025 Company, Inc. All rights reserved.</p>
+          <p>Tema Bilgisi {themeName}</p>
           
         </div>
       </footer>
