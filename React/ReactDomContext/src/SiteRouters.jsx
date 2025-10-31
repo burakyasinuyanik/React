@@ -9,21 +9,21 @@ import PrivateRoute from './PrivateRoute.jsx'
 import Fav from './pages/fav.jsx'
 
 
-export default function SiteRouters({handleLogin,user}){
+export default function SiteRouters(){
 
   return(
     
       <Routes>
-              <Route path="/" element={<Home user={user}/>}/>
+              <Route path="/" element={<Home/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/contact" element={<Contact/>}/>
-              <Route path='/products' element={<ProductLayout user={user}/>}>
-                <Route index={true} element={<Products user={user}/>}/>
-                <Route path="category/:categoryName" element={<Category user={user}/>}/>
-                <Route path='product/:productId' element={<Product user={user}/>}/>
+              <Route path='/products' element={<ProductLayout/>}>
+                <Route index={true} element={<Products/>}/>
+                <Route path="category/:categoryName" element={<Category/>}/>
+                <Route path='product/:productId' element={<Product/>}/>
               </Route>
-              <Route path='/login' element={<Login handleLogin={handleLogin} />}/>
-              <Route path='/fav' element={<PrivateRoute user={user}><Fav/></PrivateRoute>}/>
+              <Route path='/login' element={<Login />}/>
+              <Route path='/fav' element={<PrivateRoute><Fav/></PrivateRoute>}/>
               <Route path="*" element={<PageNotFound/>}/>
 
       </Routes>

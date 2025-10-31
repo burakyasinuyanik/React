@@ -1,7 +1,12 @@
+import { useContext } from "react"
 import { Link, NavLink } from "react-router-dom"
+import { SiteContext } from "../context/SiteContext"
+import { ThemeContext } from "../context/ThemeContext"
 
-export default function NavBar({user,handleLogout}){
-
+export default function NavBar(){
+  const { user, handleLogOut }=useContext(SiteContext)
+  const { themeName, handleTheme } = useContext(ThemeContext)
+ 
   return(
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
@@ -31,15 +36,24 @@ export default function NavBar({user,handleLogout}){
                         <NavLink className="nav-link" to="/fav" >Favoriler</NavLink>
                       </li>        
               
-              <li className="nav-item">
-              <button className="nav-link" onClick={handleLogout} >Çıkış Yap {user.name}</button>
-              </li></>:
+                      <li className="nav-item">
+                    <button className="btn" onClick={handleLogOut} >Çıkış Yap:{user.name}</button>
+                      </li>
+                      </>:
               <li className="nav-item">
               <NavLink className="nav-link" to="/Login" >Giriş Yap</NavLink>
             </li>
+            
             }
+              
           </ul>
+           
         </div>
+          <ul className="navbar-nav d-flex">
+            <li className="nav-item">
+              <button className="nav-link" onClick={handleTheme} >Tema Değiştir</button>
+            </li>
+          </ul>
       </div>
     </nav>
     </>

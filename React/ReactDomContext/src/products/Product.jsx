@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { SiteContext } from "../context/SiteContext"
 
-export default function Product({user}){
+export default function Product(){
 
   const {productId}=useParams()
-
+  const {user}=useContext(SiteContext)
   const[product,setProduct]=useState({})
   useEffect(()=>{
     fetch(`https://fakestoreapi.com/products/${productId}`)
