@@ -1,9 +1,9 @@
-import { useReducer, useState } from 'react'
+import { useReducer, useState,useContext } from 'react'
 import { DECREMENT, INCREMENT, RESET, countReducer, intialCountState } from "./reducer/index"
+import { SiteContext } from './context/SiteContext'
 
 function App() {
-  // const [count, setCount] = useState(0)
-  const [count, dispatch] = useReducer(countReducer, intialCountState)
+  const {counter}=useContext(SiteContext)
  
   return (
     <>
