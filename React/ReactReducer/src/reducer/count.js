@@ -1,8 +1,6 @@
-export const INCREMENT="INCREMENT"
-export const DECREMENT="DECREMENT"
-export const RESET="RESET"
-export const initialCountState=0
-export const countRecuder=(state,action)=>{
+import { INCREMENT, DECREMENT, RESET } from "./actionType"
+export const intialCountState =0
+export const countReducer=(state,action)=>{
   switch (action) {
     case INCREMENT:
      return state+1
@@ -11,7 +9,7 @@ export const countRecuder=(state,action)=>{
      return state-1
       
     case RESET:
-     return initialState
+      return intialCountState
      
     default:
       return state
