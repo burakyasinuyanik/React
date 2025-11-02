@@ -11,9 +11,9 @@ function SiteContextProvider({children}){
     }
   }
   return(
-    <SiteContextProvider value={contex}>
+    <SiteContext.Provider value={contex}>
       {children}
-    </SiteContextProvider>
+    </SiteContext.Provider>
   )
 }
 export{
