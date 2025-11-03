@@ -1,5 +1,5 @@
 import { useReducer } from "react"
-import { ADD_TODO, initialTodos, todoReducer } from "./reducer/todo"
+import { ADD_TODO, initialTodos, ROMOVE_TODO, todoReducer } from "./reducer/todo"
 export default function AddTodo(){
 
   const [ state,dispatch]=useReducer(todoReducer,initialTodos)
@@ -8,7 +8,7 @@ export default function AddTodo(){
     event.preventDefault()
     const inputValue=event.target.elements[0].value
     dispatch({type:ADD_TODO,payload:inputValue})
-    console.log(state)
+    
   }
 
   return(
@@ -19,7 +19,9 @@ export default function AddTodo(){
     </form>
     <ul>
 
-    {state?.todos?.map((item,key)=><li key={key}>{item.title}---{item.id}</li>)}
+    {
+    state?.todos?.map((item,key)=><li key={key}>{item.title}---{item.id}<button onClick={()=>dispatch({type:ROMOVE_TODO,payload:item.id})}>Sil</button></li>)
+    }
     </ul>
     </>
   )

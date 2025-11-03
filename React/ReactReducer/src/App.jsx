@@ -5,18 +5,19 @@ import ContextAboutPage from './ContextAboutPage'
 import AddTodo from './AddTodo'
 
 function App() {
-  const {counter:{state,dispatch}}=useContext(SiteContext)
+  const {counter:{countState,countDispatch},todo:{todoState,todoDispatch}}=useContext(SiteContext)
  
   return (
     <>
       <h2>Todo</h2>
       <AddTodo/>
+      <AddTodo/>
       <hr/>
-      <h2>Count:::{state}</h2>
-      <button onClick={()=>dispatch(INCREMENT)}>Arttır</button>
-      <button onClick={() => dispatch(DECREMENT)}>Azalt</button>
-      <button onClick={() => dispatch(RESET)}>Sıfırla</button>
-      <button onClick={() => dispatch("Burak")}>Olmayani Yap</button>
+      <h2>Count:::{countState}</h2>
+      <button onClick={() => countDispatch(INCREMENT)}>Arttır</button>
+      <button onClick={() => countDispatch(DECREMENT)}>Azalt</button>
+      <button onClick={() => countDispatch(RESET)}>Sıfırla</button>
+      <button onClick={() => countDispatch("Burak")}>Olmayani Yap</button>
       <hr />
       <ContextAboutPage/>
       <hr />

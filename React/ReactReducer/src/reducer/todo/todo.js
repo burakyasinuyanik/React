@@ -9,7 +9,7 @@ export const intialTodoState =0
 export const todoReducer=(state,action)=>{
   switch (action.type) {
     case ADD_TODO:
-      console.log(action)
+      
      return {
       ...state,
       todos:[
@@ -19,9 +19,10 @@ export const todoReducer=(state,action)=>{
           title:action.payload}
       ]}
       
-    case RESET_TODO:
-     return state
-      
+    case ROMOVE_TODO:
+      const newList=state.todos.filter(todo=>todo.id!=action.payload)
+            
+     return {...state,todos:newList}      
     case RESET_TODO:
       return intialTodoState
      

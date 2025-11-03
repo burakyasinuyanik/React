@@ -1,13 +1,19 @@
 import { createContext, useContext, useReducer} from "react";
 import { countReducer, intialCountState } from "../reducer/counter";
+import { initialTodos, todoReducer } from "../reducer/todo";
 
 const SiteContext=createContext()
 function SiteContextProvider({children}){
-  const [count, dispatch] = useReducer(countReducer, intialCountState)
+  const [count, countDispatch] = useReducer(countReducer, intialCountState)
+  const [todo, todoDispatch] = useReducer(todoReducer, initialTodos)
   const contex={
     counter:{
-      state:count,
-      dispatch
+      countState:count,
+      countDispatch
+    },
+    todo:{
+      todoState:todo,
+      todoDispatch
     }
   }
   return(
