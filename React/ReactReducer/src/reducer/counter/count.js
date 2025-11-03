@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from "./actionType"
+import { INCREMENT, DECREMENT, RESET } from "./actionType.js"
 export const intialCountState =0
 export const countReducer=(state,action)=>{
   switch (action) {

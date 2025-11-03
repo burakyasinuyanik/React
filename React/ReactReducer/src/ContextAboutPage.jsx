@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SiteContext } from "./context/SiteContext";
-import { DECREMENT, INCREMENT, RESET } from "./reducer";
+import { DECREMENT, INCREMENT, RESET } from "./reducer/counter";
 
 export default function ContextAboutPage(){
 
