@@ -14,8 +14,6 @@ reducers:{
     state.value=100
   },
   addMore(state,action){
-    console.log(state)
-    console.table(action)
     state.value+=action.payload
   }
 }
