@@ -1,8 +1,13 @@
 export default function LoadingComponent() {
 
   return (
-    <>
-      <h1>LoadingComponent</h1>
-    </>
+    <p className="card-text placeholder-glow">
+    <span className="placeholder col-7" />
+    <span className="placeholder col-4" />
+    <span className="placeholder col-4" />
+    <span className="placeholder col-6" />
+    <span className="placeholder col-8" />
+  </p>
+
   )
 }

@@ -6,6 +6,7 @@ import Row from "./components/Row"
 import AxiosCategories from "./pages/axios/AxiosCategories"
 import FetchCategories from "./pages/fetch/FetchCategories"
 import RtkCategories from "./pages/rtk/RtkCategories"
+import FetchCategory from "./pages/fetch/FetchCategory"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path="/fetch-categories" element={<FetchCategories/>} />
+          <Route path="/fetch-category/:categoryName" element={<FetchCategory/>} />
           <Route path="/axios-categories" element={<AxiosCategories/>} />
           <Route path="/rtk-categories" element={<RtkCategories/>} />
         </Routes>
