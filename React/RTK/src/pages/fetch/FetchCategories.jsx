@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
+
+import useCategoriesFetch from "../../customHooks/useCategoriesFetchApi"
 import LoadingComponent from "../../components/LoadingComponent"
-import useCategoriesFetchApi from "../../customHooks/useCategoriesFetchApi"
+
 
 export default function FetchCategories() {
-  const [data, isLoading, isError, error] = useCategoriesFetchApi()
+  const [data, isLoading, isError, error] = useCategoriesFetch()
 
   return (
     <div className="col-sm-12">
